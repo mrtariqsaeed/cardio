@@ -1,0 +1,65 @@
+<section style="min-height:500px;padding-top:0!important;">
+
+  <mat-tab-group [selectedIndex]="selectedTab" (selectedTabChange)="tabChanged($event)" mat-align-tabs="center">
+
+    <mat-tab label="Merck">
+
+      <div class="card" style="width: 90%;max-width:400px;margin: 50px auto;padding:100px 20px 20px 20px;position:relative;" id="form">
+        <h3 class="cardTitle" style="">Merck Login</h3>
+        <mat-form-field style="width:100%">
+          <input matInput placeholder="Email" name="email" [(ngModel)]='merck.email' required />
+        </mat-form-field>
+
+        <mat-form-field style="width:100%">
+          <input matInput type='password' placeholder="Password" autocomplete="off" name="password" [(ngModel)]='merck.password' required />
+        </mat-form-field>
+
+        <div style="text-align: center;margin-top:30px">
+          <p>{{ errMerck }}</p>
+          <button mat-flat-button color="primary" style='padding: 0 30px;' (click)="login()">Login</button>
+        </div>
+      </div>
+    </mat-tab>
+
+
+    <!-- <mat-tab label="Area Manager">
+
+      <div class="card" style="width: 90%;max-width:400px;margin: 50px auto;padding:100px 20px 20px 20px;position:relative;" id="form">
+        <h3 class="cardTitle" style="">AM Login</h3>
+        <mat-form-field style="width:100%">
+          <input matInput placeholder="Email" name="email" [(ngModel)]='am.email' required />
+        </mat-form-field>
+
+        <mat-form-field style="width:100%">
+          <input matInput type='password' placeholder="Password" autocomplete="off" name="password" [(ngModel)]='am.password' required />
+        </mat-form-field>
+
+        <div style="text-align: center;margin-top:30px">
+          <p>{{ errAM }}</p>
+          <button mat-flat-button color="primary" style='padding: 0 30px;' (click)="amLogin()">Login</button>
+        </div>
+      </div>
+    </mat-tab> -->
+
+    <mat-tab label="Doctor">
+
+      <div class="card" style="width: 90%;max-width:400px;margin: 50px auto;padding:100px 20px 20px 20px;position:relative;" id="form">
+        <h3 class="cardTitle" style="">Doctor Login</h3>
+        <mat-form-field style="width:100%">
+          <input matInput placeholder="Mobile" autocomplete="off" name="mobile" [(ngModel)]='user.mobile' required />
+        </mat-form-field>
+
+        <mat-form-field style="width:100%">
+          <input matInput placeholder="Password" autocomplete="off" name="password" [(ngModel)]='user.password' required />
+        </mat-form-field>
+
+        <div style="text-align: center;margin-top:30px">
+          <p>{{ err }}</p>
+          <button mat-flat-button color="primary" style='padding: 0 30px;' (click)="login()">Login</button>
+        </div>
+      </div>
+    </mat-tab>
+
+
+  </mat-tab-group>
+</section>

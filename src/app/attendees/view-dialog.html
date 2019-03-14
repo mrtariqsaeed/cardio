@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>{{data.name}}</h1>
+<div mat-dialog-content>
+  <table class="dialogTable">
+    <tr><th>Email: </th><td>{{data.email}}</td></tr>
+    <tr><th>Mobile: </th><td>{{data.mobile}}</td></tr>
+    <tr><th>Specialty: </th><td>{{data.specialty}}</td></tr>
+    <tr><th>Title: </th><td>{{data.title}}</td></tr>
+    <tr><th>Governorate: </th><td>{{data.governorate}}</td></tr>
+    <tr><th>Clinic: </th><td>{{data.clinic}}</td></tr>
+    <tr><th>Institute: </th><td>{{data.institute}}</td></tr>
+    <tr><th>Age: </th><td>{{data.age}} years old</td></tr>
+    <tr><th>MD of Cardiolgy: </th><td>{{data.md}}</td></tr>
+  </table>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="close()">close</button>
+</div>

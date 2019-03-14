@@ -1,0 +1,44 @@
+.card li{
+  position: relative;
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  list-style-type: none;
+  padding-left: 60px;
+  margin: 10px auto;
+  background: #eee;
+  font-weight: 400;
+  color: #555;
+  border-radius: 25px;
+}
+agm-map {
+  height: 300px;
+}
+
+li mat-icon{
+  position: absolute;
+  display: block;
+  font-size: 30px;
+  margin-right: 20px;
+  left:20px;
+  top:50%;
+  margin-top: -15px;
+}
+.full-width {
+  width: 45%;
+  margin-right: 5%;
+}
+.mat-radio-button {
+  margin: 0 20px 0 5px;
+}
+
+
+@media screen and (max-width: 620px){
+  .full-width {
+    width: 100%;
+    margin: 0;
+  }
+}
+.example-spacer {
+  flex: 1 1 auto;
+}

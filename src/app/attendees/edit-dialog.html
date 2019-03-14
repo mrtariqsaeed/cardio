@@ -1,0 +1,56 @@
+<h1 mat-dialog-title>{{user.name}}</h1>
+<div mat-dialog-content  style="background-color:#f5f5f5;">
+  <p>{{ err }}</p>
+  <mat-form-field style="width:100%">
+    <input matInput placeholder="Name" autocomplete="off" [(ngModel)]='user.name' />
+  </mat-form-field>
+
+  <mat-form-field style="width:100%">
+    <input matInput placeholder="Email" autocomplete="off" [(ngModel)]='user.email' />
+  </mat-form-field>
+
+  <mat-form-field style="width:100%">
+    <input matInput placeholder="Mobile" autocomplete="off" [(ngModel)]='user.mobile' />
+  </mat-form-field>
+
+  <mat-form-field style="width:100%">
+    <input matInput placeholder="Specialty" autocomplete="off" [(ngModel)]='user.specialty' />
+  </mat-form-field>
+
+  <mat-form-field style="width:100%">
+    <input matInput placeholder="Title" autocomplete="off" [(ngModel)]='user.title' />
+  </mat-form-field>
+
+  <mat-form-field style="width:100%">
+    <input matInput placeholder="Governorate" autocomplete="off" [(ngModel)]='user.governorate' />
+  </mat-form-field>
+
+  <mat-form-field style="width:100%">
+    <input matInput placeholder="Clinic Address" autocomplete="off" [(ngModel)]='user.clinic' />
+  </mat-form-field>
+
+  <mat-form-field style="width:100%">
+    <input matInput placeholder="Institute" autocomplete="off" [(ngModel)]='user.institute' />
+  </mat-form-field>
+
+  <mat-form-field style="width:100%">
+    <input matInput placeholder="Age" autocomplete="off" type="number" [(ngModel)]='user.age' />
+  </mat-form-field>
+
+
+
+  <mat-form-field style="width:100%">
+    <mat-select [(ngModel)]='user.md'>
+      <mat-option>-- None --</mat-option>
+      <mat-option value="Yes">Yes</mat-option>
+      <mat-option value="No">No</mat-option>
+    </mat-select>
+    <mat-label>MD of Cardiolgy</mat-label>
+  </mat-form-field>
+
+
+</div>
+<div mat-dialog-actions>
+  <button mat-flat-button color="warn" style="margin-right:30px;" (click)="close()">Cancel</button>
+  <button mat-flat-button color="primary" [mat-dialog-close]="user">Save</button>
+</div>

@@ -1,0 +1,38 @@
+<section>
+  <h1 class="main-title text-center yellow-text">Cardiology Olympics Competition</h1>
+  <!-- <h3 class="sub-title text-center white-text">The video below is a documentary video about the 2018 cardiology olympics competition </h3> -->
+
+  <div style="width:100%; max-width:700px;margin:30px auto;height:auto;">
+    <mat-video fullscreen='false' poster='assets/img/video.png' [autoplay]="true" >
+      <source matVideoSource src="assets/video/video.mp4" type="video/mp4">
+    </mat-video>
+  </div>
+</section>
+
+<section style='background: #ffc832;'>
+  <div class="max-width">
+    <article class="col-50">
+      <h1 class="main-title text-left purple-text">About</h1>
+      <p class="text">
+         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+      </p>
+    </article>
+
+    <article class="col-50">
+      <h1 class="main-title text-left purple-text">Vision</h1>
+      <p class="text">
+         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+      </p>
+    </article>
+    <div style="clear:both"></div>
+  </div>
+</section>
+
+<section class="portfolio">
+  <div class='img-container' (click)="openDialog('assets/img/img1.jpg')"><img src="assets/img/img1.jpg" /><div class="img-overlay"><mat-icon>zoom_in</mat-icon></div></div>
+  <div class='img-container' (click)="openDialog('assets/img/img2.jpg')"><img src="assets/img/img2.jpg" /><div class="img-overlay"><mat-icon>zoom_in</mat-icon></div></div>
+  <div class='img-container' (click)="openDialog('assets/img/img3.jpg')"><img src="assets/img/img3.jpg" /><div class="img-overlay"><mat-icon>zoom_in</mat-icon></div></div>
+  <div class='img-container' (click)="openDialog('assets/img/img1.jpg')"><img src="assets/img/img1.jpg" /><div class="img-overlay"><mat-icon>zoom_in</mat-icon></div></div>
+  <div class='img-container' (click)="openDialog('assets/img/img2.jpg')"><img src="assets/img/img2.jpg" /><div class="img-overlay"><mat-icon>zoom_in</mat-icon></div></div>
+  <div class='img-container' (click)="openDialog('assets/img/img3.jpg')"><img src="assets/img/img3.jpg" /><div class="img-overlay"><mat-icon>zoom_in</mat-icon></div></div>
+</section>

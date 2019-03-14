@@ -1,0 +1,45 @@
+<div class="card" style="width: 90%;max-width:500px;margin: 50px auto;padding:100px 20px 20px 20px;position:relative;" id="form">
+  <h1 class="cardTitle" style="">Contact Us</h1>
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Name" autocomplete="off" />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Email" autocomplete="off" />
+  </mat-form-field>
+
+  <mat-form-field style="width:100%">
+    <textarea matInput placeholder="message" autocomplete="off" ></textarea>
+  </mat-form-field>
+
+  <div style="text-align: center;margin-top:30px">
+    <p>{{ err }}</p>
+    <button mat-flat-button color="primary" style='padding: 0 30px;' (click)="register()">Send</button>
+  </div>
+</div>
+
+
+<!-- <section style="padding:0;">
+  <agm-map
+    [latitude]="lat"
+    [longitude]="lng"
+    [zoom]="zoom"
+    [disableDefaultUI]="true"
+    [scrollwheel]="false"
+    [zoomControl]="true">
+
+    <agm-marker
+        *ngFor="let m of markers; let i = index"
+        (markerClick)="clickedMarker(m.label, i)"
+        [latitude]="m.lat"
+        [longitude]="m.lng">
+
+      <agm-info-window>
+        <strong>Merck LTD Egypt</strong>
+      </agm-info-window>
+
+    </agm-marker>
+
+
+  </agm-map>
+</section> -->

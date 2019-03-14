@@ -1,0 +1,53 @@
+<section style="min-height:500px;padding-top:0!important;">
+
+      <div class="card" style="width: 90%;max-width:400px;margin: 50px auto;padding:100px 20px 20px 20px;position:relative;" id="formPS">
+        <h3 class="cardTitle" style="">Signup</h3>
+        <mat-vertical-stepper #stepper [selectedIndex]="selectedIndex">
+          <mat-step editable='false'>
+
+            <ng-template matStepLabel>Your Email</ng-template>
+            <mat-form-field style="width:100%">
+              <input matInput type="email" placeholder="Email" autocomplete="off" [(ngModel)]='merck.email' />
+            </mat-form-field>
+
+            <div>
+
+              <button mat-stroked-button (click)="checkEmail()">Next</button>
+              <span style="display: block;margin-top:20px;" *ngIf="emailErr != ''">{{ emailErr }}</span>
+            </div>
+          </mat-step>
+
+          <mat-step editable='false'>
+              <ng-template matStepLabel>More Information</ng-template>
+              <mat-form-field style="width:100%">
+                <input matInput type="text" placeholder="Name" autocomplete="off" [(ngModel)]='merck.name' />
+              </mat-form-field>
+
+              <mat-form-field style="width:100%">
+                <input matInput type="password" placeholder="Password" autocomplete="off" [(ngModel)]='merck.password' />
+              </mat-form-field>
+
+              <mat-form-field style="width:100%">
+                <input matInput type="password" placeholder="Confirm Password" autocomplete="off" [(ngModel)]='password' />
+              </mat-form-field>
+
+              <div style="text-align: center;margin-top:30px">
+                <p>{{ errPS }}</p>
+                <button mat-flat-button color="primary" style='padding: 0 30px;' (click)="signup()">Register</button>
+                <span style="display: block;margin-top:20px;" *ngIf="err != ''">{{ err }}</span>
+              </div>
+          </mat-step>
+
+          <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+
+            <div style="margin-top:20px;">
+              <b>You have successfully registered!</b>
+              <button mat-flat-button color='primary' (click)="goLogin()" style="margin-top:20px;">Login</button>
+            </div>
+          </mat-step>
+
+        </mat-vertical-stepper>
+      </div>
+
+</section>

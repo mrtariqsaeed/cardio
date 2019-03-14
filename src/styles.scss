@@ -1,0 +1,371 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+*{
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto;
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+h1{
+  font-weight: 400;
+}
+
+h2, h3, h4{
+  font-weight: 400;
+}
+
+.main-title{
+  font-size:40px;
+  text-align: center;
+  margin-top:60px;
+  margin-bottom:50px;
+  font-family: 'Yellowtail', cursive;
+}
+.sub-title{
+  font-size:20px;text-align: center;margin-bottom:30px;
+}
+section{
+  padding: 30px;
+}
+header{
+  width: 100%;
+  background: #000;
+
+  /*height: 200px;
+  background: #503291;*/
+}
+.opacity{
+  padding: 20px 20px;
+  background: #fff;
+  width: 100%;
+  opacity: 0.95;
+}
+nav{
+  width: 100%;
+  height: auto;
+  background: #503291;
+  line-height: 100%;
+  box-shadow: 0 2px 2px rgba(0,0,0,.5);
+  position: sticky;
+  top: 0;
+  left:0;
+  z-index: 1000;
+}
+
+nav::after{
+  display: table;
+  content: "";
+  clear: both;
+}
+
+.navLinks
+{
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.navLinks::after
+{
+  display: table;
+  content: "";
+  clear:both;
+}
+
+.title{
+  display: block;
+  padding: 20px 20px;
+  height: 200px;
+  line-height: 200px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 30px;
+  color: #fff;
+}
+.navLinks a{
+  display: block;
+  padding: 20px 0;
+  text-align: center;
+  margin: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 15px;
+  color: #fff;
+  float: left;
+  width: 25%;
+
+}
+
+.navLinks a:hover{
+  border-bottom-style: solid;
+  border-bottom-width: 4px;
+  border-bottom-color: rgba(255, 255, 255, 0.7);
+}
+
+.navLinks a.active{
+  color: #ffc832;
+  border-bottom-style: solid;
+  border-bottom-width: 4px;
+  border-bottom-color: #ffc832;
+}
+section{
+  min-height: 200px;
+}
+/*Footer*/
+.logos{
+  max-width: 900px;
+  margin: 0 auto;
+  height: auto;
+}
+.logos::after{
+  display: table;
+  content: "";
+  clear:both;
+}
+
+.logo{
+
+  width: 50%;
+  height: 100px;
+  float: left;
+  position: relative;
+}
+
+.logo img{
+  position: absolute;
+  display: block;
+  width: auto;
+  max-width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 100%;
+
+}
+
+button{
+  text-transform: uppercase;
+  font-weight: 500!important;
+  font-size: 15px;
+}
+
+footer{
+  position: relative;
+  height: 60px;
+  line-height: 60px;
+  background-color: #111;
+  color: #999;
+  padding-left: 20px;
+}
+footer img{
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  float: right;
+  height: 15px;
+}
+
+.full-width {
+  width: 45%;
+  margin-right: 5%;
+}
+.mat-radio-button {
+  margin: 0 20px 0 5px;
+}
+.filter{
+  width: 100%;
+}
+.filter::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.full-width-float-container{
+  width: 100%;
+  padding-bottom: 50px;
+}
+.full-width-float-container::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+.col-25{
+  width: 25%;
+  float: left;
+  padding: 0 20px;
+}
+
+.col-30{
+  width: 30%;
+  float: left;
+  padding: 0 20px;
+}
+
+.col-70{
+  width: 70%;
+  float: left;
+  padding: 0 20px;
+}
+
+
+.col-75{
+  width: 75%;
+  float: left;
+  padding: 0 20px;
+}
+
+.col-50{
+  width: 50%;
+  float: left;
+}
+
+.col-25 :first-child{
+  width: 100%;
+}
+
+.max-width{
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.white-text{
+  color: #fff;
+}
+.purple-text{
+  color:#503291;
+}
+
+.yellow-text{
+  color:#ffc832;
+}
+article{
+  padding: 40px 20px;
+}
+
+
+.text{
+  font-weight: 400;
+  margin: 0;
+  font-size: 20px;
+  line-height: 200%;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.text-left{
+  text-align: left;
+}
+
+.card{
+  border-radius: 5px;
+  background: #fff;
+}
+.cardTitle{
+  color:#222;
+  text-transform: uppercase;
+  font-weight:400;
+  display: block;
+  width: 100%;
+  position:absolute;
+  margin: 0;
+  padding: 40px 0 20px 20px;
+  top:0;
+  left:0;
+  font-size: 20px;
+}
+
+
+
+@media (max-width: 900px) and (min-width: 621px)
+{
+  .col-25{
+    width: 50%;
+    float: left;
+    padding: 0 10px;
+  }
+
+  .col-75{
+    width: 50%;
+    float: left;
+    padding: 0 10px;
+  }
+
+  .col-30{
+    width: 100%;
+  }
+  .col-70{
+    width: 100%;
+  }
+
+}
+@media (max-width: 620px)
+{
+  .full-width {
+    width: 100%;
+    margin: 0;
+  }
+  .main-title{
+    font-size: 25px;
+  }
+  .sub-title{
+    font-size: 18px;
+  }
+  .text{
+    font-size: 16px;
+    line-height: 150%;
+  }
+  .title{
+    font-size: 22px;
+    text-align: center;
+  }
+  .logo{
+    width:50%;
+  }
+  .navLinks{
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .navLinks a{
+    font-size: 13px;
+  }
+
+  .col-50{
+    width: 100%;
+    padding: 0 10px;
+  }
+  .col-25{
+    width: 100%;
+  }
+  .col-75{
+    width: 100%;
+  }
+  .col-30{
+    width: 100%;
+  }
+  .col-70{
+    width: 100%;
+  }
+}
+
+::ng-deep .mat-stepper-header{
+    pointer-events: none !important;
+}

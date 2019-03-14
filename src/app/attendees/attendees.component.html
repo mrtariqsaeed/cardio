@@ -1,0 +1,126 @@
+<div class="full-width-float-container">
+  <div class="col-30" style="padding-top:50px;">
+    <div class="card" style="width: 100%;max-width:600px;margin: 50px auto 0 auto;padding:100px 20px 20px 20px;position:relative;" >
+      <h1 class="cardTitle" style="">Event</h1>
+      <li><mat-icon>calendar_today</mat-icon>{{ (event | async)?.date.toDate() | date:'mediumDate' }}</li>
+      <li><mat-icon>place</mat-icon>{{ (event | async)?.governorate }}</li>
+      <li *ngFor='let s of speakers | async'><mat-icon>mic_none</mat-icon> {{ s.name }}</li>
+      <div style="text-align: center;margin-top:30px">
+        <button mat-flat-button color="primary" style='padding: 0 40px;border-radius: 30px;text-align:center;' (click)="goBack()"><mat-icon>arrow_back</mat-icon> Back</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-70">
+    <mat-tab-group [selectedIndex]="selectedTab" (selectedTabChange)="tabChanged($event)" animationDuration="500ms" dynamicHeight>
+      <mat-tab label="View Attendees">
+        <div class="card" style="width: 100%;max-width:900px;margin: 50px auto 0 auto;padding:100px 20px 20px 20px;position:relative;">
+          <h1 class="cardTitle" style="">ATTENDEES</h1>
+
+          <table mat-table [dataSource]="dataSource" matSort style="width:100%;">
+
+            <ng-container matColumnDef="id">
+              <mat-header-cell *matHeaderCellDef> # </mat-header-cell>
+              <mat-cell *matCellDef="let row;let i = index;"> {{ i+1 }} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="name">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="status">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
+              <mat-cell *matCellDef="let row">{{ row.status }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="view">
+              <mat-header-cell *matHeaderCellDef> VIEW </mat-header-cell>
+              <mat-cell *matCellDef="let row"><button mat-icon-button (click)="viewAttendee(row)"><mat-icon>keyboard_arrow_right</mat-icon></button></mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+              <mat-header-cell *matHeaderCellDef> Action</mat-header-cell>
+              <mat-cell *matCellDef="let row">
+                <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon></button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item (click)="editAttendee(row)" *ngIf="role == 'ps'">Edit</button>
+                  <button mat-menu-item (click)="deleteAttendee(row)" *ngIf="role == 'ps'">Delete</button>
+                  <button mat-menu-item (click)="approveAttendee(row)" *ngIf="row.status == 'Pending' && role == 'am'">Approve</button>
+                  <button mat-menu-item (click)="viewAttendee(row)">View</button>
+                </mat-menu>
+              </mat-cell>
+            </ng-container>
+
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </table>
+
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+        </div>
+      </mat-tab>
+      <mat-tab label="Add Attendee" *ngIf="role == 'ps'">
+        <div class="card" style="min-height: 500px;width: 100%;max-width:900px;margin: 50px auto 0 auto;padding:100px 20px 20px 20px;position:relative;" id="form">
+          <h1 class="cardTitle" style="">Registration</h1>
+
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Name" autocomplete="off" [(ngModel)]='user.name' />
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Email" autocomplete="off" [(ngModel)]='user.email' />
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Mobile" autocomplete="off" [(ngModel)]='user.mobile' />
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Specialty" autocomplete="off" [(ngModel)]='user.specialty' />
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Title" autocomplete="off" [(ngModel)]='user.title' />
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Governorate" autocomplete="off" [(ngModel)]='user.governorate' />
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Clinic Address" autocomplete="off" [(ngModel)]='user.clinic' />
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Institute" autocomplete="off" [(ngModel)]='user.institute' />
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Age" autocomplete="off" type="number" [(ngModel)]='user.age' />
+          </mat-form-field>
+
+
+
+          <mat-form-field class="full-width">
+            <mat-select [(ngModel)]='user.md'>
+              <mat-option>-- None --</mat-option>
+              <mat-option value="Yes">Yes</mat-option>
+              <mat-option value="No">No</mat-option>
+            </mat-select>
+            <mat-label>MD of Cardiolgy</mat-label>
+          </mat-form-field>
+
+          <div style="text-align: center;margin-top:30px">
+            <p>{{ err }}</p>
+            <button mat-flat-button color="primary" style='padding: 0 30px;' (click)="register()">Register</button>
+          </div>
+        </div>
+
+        <div style="width: 90%;max-width:700px;display:none;margin: 50px auto;padding:20px;text-align: center" id="success">
+          <h2 class="yellow-text">Successfully registered!</h2>
+          <button mat-flat-button color="basic" style='padding: 0 30px;' (click)="refresh()">Register Another Doctor</button>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

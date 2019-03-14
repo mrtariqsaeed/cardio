@@ -1,0 +1,9 @@
+export interface User{
+  id: string,
+  name: string,
+  email: string,
+  password?: string,
+  date?: Date,
+  verified?: boolean,
+  role: string
+}

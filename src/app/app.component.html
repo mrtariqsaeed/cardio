@@ -1,0 +1,47 @@
+<header>
+  <div class="opacity">
+    <div class="logos">
+      <div class="logo">
+        <img src="assets/img/cardio.jpg" />
+      </div>
+
+      <div class="logo" style="float: right;">
+        <img src="assets/img/egsc.png" />
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="navLinks">
+    <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+    <a routerLink="/contact" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Contact</a>
+    <a routerLink='/login' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" *ngIf='!loggedIn'>Login</a>
+    <a routerLink="/signup" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" *ngIf='!loggedIn'>Signup</a>
+
+    <a routerLink='/dashboard' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" *ngIf='am || ps'>Dashboard</a>
+    <a routerLink="" (click)='logout()' *ngIf='loggedIn'>Logout</a>
+  </div>
+</nav>
+
+<div style="min-height:500px">
+  <router-outlet></router-outlet>
+</div>
+<div style="background: #000;">
+  <div class="opacity">
+    <div class="logos">
+      <div class="logo">
+        <img src="assets/img/adancore.png" />
+      </div>
+
+      <div class="logo" style="float: right;">
+        <img src="assets/img/attack.png" />
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  &copy; Merck LTD Egypt
+
+  <img src="assets/img/logo.png" />
+</footer>

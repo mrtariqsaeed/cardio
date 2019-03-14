@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "cardio-merck"
+  },
+  "targets": {
+    "cardio-merck": {
+      "hosting": {
+        "public": [
+          "cardio-merck"
+        ]
+      }
+    }
+  }
+}

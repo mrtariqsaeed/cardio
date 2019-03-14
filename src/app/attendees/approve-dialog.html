@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>{{ user.name }}</h1>
+<div mat-dialog-content  style="background-color:#fff;">
+  <li><mat-icon>send</mat-icon> Send him SMS and email invitation</li>
+  <li><mat-icon>lock_open</mat-icon> Allow him to login</li>
+  <br>
+</div>
+<div mat-dialog-actions>
+  <button mat-flat-button color="warn" style="margin-right:30px;" (click)="close()">Cancel</button>
+  <button mat-flat-button color="primary" [mat-dialog-close]="user">Approve</button>
+</div>
